@@ -1,0 +1,44 @@
+body {
+    background-color: #000000;
+}
+
+.canvas {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 200px;
+    display: flex;
+    overflow: hidden;
+}
+
+.isotype {
+    position: absolute;
+    width: 40px;
+    height: 200px;
+    background-color: #B20710;
+}
+
+.isotype:nth-child(1) {
+    right: 0;
+    background-color: #B20710;
+}
+
+.isotype:nth-child(2) {
+    left: 40px;
+    z-index: 1;
+    transform: skewX(22deg);
+    box-shadow: 0 0 15px #000000;
+    background-color: #E50914;
+}
+
+.curve-under {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 93.5%);
+    z-index: 1;
+    width: 702px;
+    height: 427px;
+    border-radius: 50%;
+}
