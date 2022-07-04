@@ -5,8 +5,8 @@ Graphical representation of the Netflix isotype using pure CSS3.
 
 The implemented technologies are shown below:
 
-✨ CSS3 ✨
-HTLM5
+- ✨ CSS3 ✨
+- HTLM5
 
 
 ### Installation
