@@ -3,42 +3,94 @@ body {
 }
 
 .canvas {
-    top: 50%;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    width: 120px;
-    height: 200px;
+    width: 100vw;
+    height: 100vh;
     display: flex;
-    overflow: hidden;
+    justify-content: center;
+    align-items: center;
 }
 
-.isotype {
-    position: absolute;
-    width: 40px;
-    height: 200px;
-    background-color: #B20710;
-}
-
-.isotype:nth-child(1) {
-    right: 0;
-    background-color: #B20710;
-}
-
-.isotype:nth-child(2) {
-    left: 40px;
-    z-index: 1;
-    transform: skewX(22deg);
-    box-shadow: 0 0 15px #000000;
-    background-color: #E50914;
-}
-
-.curve-under {
+.netflix-isotype {
     position: relative;
-    left: 50%;
-    transform: translate(-50%, 93.5%);
+}
+
+.netflix-isotype:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -40px;
+    width: 100%;
+    height: 40px;
+    border-radius: 100%;
+    background-color: #000;
+    transform: scale(1.5);
+    z-index: 2;
+}
+
+.netflix-isotype .bar {
+    position: absolute;
+    top: 0;
+    width: 55px;
+    height: 100%;
+}
+
+.netflix-isotype .bar:nth-child(1) {
+    left: 0;
+    background-color: #8e0003;
+    transform-origin: bottom center;
+}
+
+.netflix-isotype .bar:nth-child(2) {
+    left: 0;
+    box-shadow: 0 0 40px #000;
+    background-color: #e50815;
+    transform-origin: top left;
+    transform: skewX(22deg) scale(1, 0);
     z-index: 1;
-    width: 702px;
-    height: 427px;
-    border-radius: 50%;
+}
+
+.netflix-isotype .bar:nth-child(3) {
+    right: 0;
+    background-color: #8e0003;
+    transform: scale(1, 0);
+    transform-origin: bottom center;
+}
+
+.animation {
+    --angle: 22deg;
+    width: 175px;
+    height: 300px;
+}
+
+.animation .bar:nth-child(1) {
+    -webkit-animation: go-up 0.5s ease-in-out forwards;
+    animation: go-up 0.5s ease-in-out forwards;
+}
+
+.animation .bar:nth-child(2) {
+    -webkit-animation: go-down 0.5s 0.5s ease-in-out forwards;
+    animation: go-down 0.5s 0.5s ease-in-out forwards;
+}
+
+.animation .bar:nth-child(3) {
+    -webkit-animation: go-up 0.5s 1s ease-in-out forwards;
+    animation: go-up 0.5s 1s ease-in-out forwards;
+}
+
+@keyframes go-up {
+    from {
+        transform: scale(1, 0);
+    }
+    to {
+        transform: scale(1, 1);
+    }
+}
+
+@keyframes go-down {
+    from {
+        transform: skewX(var(--angle)) scale(1, 0);
+    }
+    to {
+        transform: skewX(var(--angle)) scale(1, 1);
+    }
 }
