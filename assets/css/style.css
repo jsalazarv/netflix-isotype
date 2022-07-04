@@ -94,3 +94,15 @@ body {
         transform: skewX(var(--angle)) scale(1, 1);
     }
 }
+
+
+
+.footer {
+    text-align: center;
+    font-size: 25px;
+    color: #e50815;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-family: 'BeyondTheMountains', serif;
+}
